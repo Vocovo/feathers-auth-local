@@ -1,6 +1,6 @@
 {
-  "name": "@feathersjs/authentication-local",
-  "description": "Local authentication strategy for @feathers/authentication",
+  "name": "@vocovo/feathers-auth-local",
+  "description": "Fork of Local authentication strategy for @feathers/authentication",
   "version": "1.2.9",
   "homepage": "https://feathersjs.com",
   "main": "lib/",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/feathersjs/feathers.git"
+    "url": "git://github.com/Vocovo/feathers-auth-local.git"
   },
   "author": {
     "name": "Feathers contributors",
@@ -20,7 +20,7 @@
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/feathersjs/feathers/issues"
+    "url": "https://github.com/Vocovo/feathers-auth-local/issues"
   },
   "engines": {
     "node": ">= 6"
