@@ -2,7 +2,7 @@
   "name": "@vocovo/feathers-auth-local",
   "description": "Fork of Local authentication strategy for @feathers/authentication",
   "version": "1.2.9",
-  "homepage": "https://feathersjs.com",
+  "homepage": "https://github.com/Vocovo/feathers-auth-local",
   "main": "lib/",
   "keywords": [
     "feathers",
@@ -53,6 +53,5 @@
     "mocha": "^5.2.0",
     "sinon": "^6.0.0",
     "sinon-chai": "^3.0.0"
-  },
-  "gitHead": "8c3a740ada9c9a0a25204d72f8ce982ad2887331"
+  }
 }
