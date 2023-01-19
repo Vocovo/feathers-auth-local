@@ -1,8 +1,8 @@
 {
-  "name": "@vocovo/feathers-auth-local",
-  "description": "Fork of Local authentication strategy for @feathers/authentication",
-  "version": "1.2.9",
-  "homepage": "https://github.com/Vocovo/feathers-auth-local",
+  "name": "@vocovo/feathers-authentication-local",
+  "description": "Fork of Local authentication strategy for @feathers/authentication-local",
+  "version": "1.1.0",
+  "homepage": "https://github.com/Vocovo/feathers-authentication-local",
   "main": "lib/",
   "keywords": [
     "feathers",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Vocovo/feathers-auth-local.git"
+    "url": "git://https://github.com/Vocovo/feathers-authentication-local.git"
   },
   "author": {
     "name": "Feathers contributors",
@@ -20,38 +20,55 @@
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/Vocovo/feathers-auth-local/issues"
+    "url": "https://github.com/Vocovo/feathers-authentication-local/issues"
   },
   "engines": {
     "node": ">= 6"
   },
   "scripts": {
-    "test": "mocha --opts ../../mocha.opts"
+    "publish": "git push origin --tags && npm run changelog && git push origin",
+    "release:patch": "npm version patch && npm publish --access public",
+    "release:minor": "npm version minor && npm publish --access public",
+    "release:major": "npm version major && npm publish --access public",
+    "release:pre": "npm version prerelease && npm publish --tag pre --access public",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "lint": "semistandard --fix",
+    "mocha": "mocha --opts mocha.opts",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
+    "test": "npm run lint && npm run coverage"
+  },
+  "semistandard": {
+    "sourceType": "module",
+    "env": [
+      "mocha"
+    ]
   },
   "directories": {
     "lib": "lib"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
-    "@feathersjs/errors": "^3.3.6",
+    "@feathersjs/errors": "^3.0.0",
     "bcryptjs": "^2.3.0",
-    "debug": "^4.0.0",
-    "lodash": "^4.17.5",
+    "debug": "^3.1.0",
+    "lodash.get": "^4.4.2",
+    "lodash.merge": "^4.6.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@feathersjs/authentication": "^2.1.15",
-    "@feathersjs/authentication-jwt": "^2.0.9",
-    "@feathersjs/express": "^1.3.1",
-    "@feathersjs/feathers": "^3.3.1",
-    "@feathersjs/socketio": "^3.2.9",
+    "@feathersjs/authentication": "^2.0.0",
+    "@feathersjs/authentication-jwt": "^2.0.0",
+    "@feathersjs/express": "^1.0.0",
+    "@feathersjs/feathers": "^3.0.0",
+    "@feathersjs/socketio": "^3.0.0",
     "body-parser": "^1.15.2",
     "chai": "^4.0.2",
     "feathers-memory": "^2.0.0",
-    "mocha": "^5.2.0",
-    "sinon": "^6.0.0",
-    "sinon-chai": "^3.0.0"
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.0.0",
+    "semistandard": "^12.0.0",
+    "sinon": "^4.0.0",
+    "sinon-chai": "^2.11.0"
   }
 }
